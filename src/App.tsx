@@ -88,8 +88,15 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://react.dev" target="_blank">
-          <img src="GOL-logo.png" className="logo react" alt="Game logo" />
+        <a
+          href="https://github.com/chialatte2129/game-of-life-tdd"
+          target="_blank"
+        >
+          <img
+            src="GOL-logo.png"
+            className="logo react"
+            alt="Github DerDer Wang"
+          />
         </a>
       </div>
       <h1>Game Of Life</h1>
