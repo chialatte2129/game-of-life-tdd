@@ -1,4 +1,4 @@
-import { useState, FC, ChangeEvent } from "react";
+import { FC, ChangeEvent } from "react";
 
 interface Props {
   title: String;
