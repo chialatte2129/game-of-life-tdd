@@ -1,4 +1,4 @@
-import { FC, ChangeEvent } from "react";
+import { useState, FC, ChangeEvent } from "react";
 
 interface Props {
   title: String;
@@ -7,7 +7,9 @@ interface Props {
 }
 
 const SizeInput: FC<Props> = ({ title, defaultValue, onChange }) => {
+  const [value, setValue] = useState(defaultValue);
   function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    setValue(parseInt(event.target.value, 10));
     onChange(parseInt(event.target.value, 10));
   }
 
@@ -15,12 +17,7 @@ const SizeInput: FC<Props> = ({ title, defaultValue, onChange }) => {
     <li>
       <span className="info">
         <span className="info-title">{title}</span>
-        <input
-          type="number"
-          required
-          value={defaultValue}
-          onChange={handleChange}
-        />
+        <input type="number" required value={value} onChange={handleChange} />
       </span>
     </li>
   );

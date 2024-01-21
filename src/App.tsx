@@ -20,23 +20,23 @@ function App() {
   function handleRowChange(row: number) {
     setBoardSizeState((prevBoardSize) => {
       const newBoardSize = [...prevBoardSize];
-      newBoardSize[0] = row;
+      newBoardSize[0] = row > 0 ? row : 1;
+      setBoardState(
+        Array(newBoardSize[0]).fill(Array(newBoardSize[1]).fill(0))
+      );
       return newBoardSize;
     });
-    setBoardState(
-      Array(boardSizeState[0]).fill(Array(boardSizeState[1]).fill(0))
-    );
   }
 
   function handleColumnChange(column: number) {
     setBoardSizeState((prevBoardSize) => {
       const newBoardSize = [...prevBoardSize];
-      newBoardSize[1] = column;
+      newBoardSize[1] = column > 0 ? column : 1;
+      setBoardState(
+        Array(newBoardSize[0]).fill(Array(newBoardSize[1]).fill(0))
+      );
       return newBoardSize;
     });
-    setBoardState(
-      Array(boardSizeState[0]).fill(Array(boardSizeState[1]).fill(0))
-    );
   }
 
   function handleRunTimeChange(runTime: number) {
@@ -74,12 +74,14 @@ function App() {
   }
 
   function onStartClick() {
-    setCounterState(runTimesState);
-    for (let i = 0; i < runTimesState; i++) {
-      setTimeout(() => {
-        runGame();
-        countDown();
-      }, 200 * i);
+    if (runTimesState > 0) {
+      setCounterState(runTimesState);
+      for (let i = 0; i < runTimesState; i++) {
+        setTimeout(() => {
+          runGame();
+          countDown();
+        }, 200 * i);
+      }
     }
   }
 
