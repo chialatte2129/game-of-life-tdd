@@ -28,7 +28,7 @@ In this game, the player can adjust the layout of the board, default life cell, 
 3. Any live cell with more than three live neighbours dies, as if by overpopulation.
 4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-### <a href="https://chialatte2129.github.io/game-of-life-tdd/"  alt="_blank">Click Here to Play</a>
+### <a href="https://chialatte2129.github.io/game-of-life-tdd/"  target="_blank">Click Here to Play</a>
 
 ## Installation
 
